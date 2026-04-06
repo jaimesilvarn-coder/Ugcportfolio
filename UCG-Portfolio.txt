@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UGC Media Portfolio — Jaime Silva & Callie Greenberg</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700;1,900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink: #FF2D78;
+  --red: #FC554D;
+  --blush: #FABAB4;
+  --navy: #1B3A6B;
+  --blue: #2563EB;
+  --green: #2DA84F;
+  --purple: #7B3FA0;
+  --gold: #C9954C;
+  --cream: #FDF6EE;
+  --offwhite: #FAF8F5;
+  --ink: #141010;
+  --mid: #6B6460;
+}
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+font-family: ‘Plus Jakarta Sans’, sans-serif;
+background: var(–offwhite);
+color: var(–ink);
+overflow-x: hidden;
+}
+
+/* ── HERO ── */
+.hero {
+background: var(–ink);
+padding: 80px 48px 90px;
+position: relative;
+overflow: hidden;
+}
+
+.hero-noise {
+position: absolute;
+inset: 0;
+background-image: url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 256 256’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘noise’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.9’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23noise)’ opacity=‘0.04’/%3E%3C/svg%3E”);
+pointer-events: none;
+}
+
+.hero-blobs {
+position: absolute;
+inset: 0;
+pointer-events: none;
+overflow: hidden;
+}
+
+.blob {
+position: absolute;
+border-radius: 50%;
+filter: blur(80px);
+opacity: 0.18;
+}
+.blob1 { width: 500px; height: 500px; background: var(–pink); top: -150px; right: -100px; }
+.blob2 { width: 350px; height: 350px; background: var(–blue); bottom: -80px; left: 10%; }
+.blob3 { width: 250px; height: 250px; background: var(–red); top: 30%; left: 40%; }
+
+.hero-inner {
+position: relative;
+max-width: 1100px;
+margin: 0 auto;
+}
+
+.hero-badge {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+background: rgba(255,255,255,0.08);
+border: 1px solid rgba(255,255,255,0.14);
+border-radius: 100px;
+padding: 8px 18px;
+font-size: 11px;
+font-weight: 600;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(–blush);
+margin-bottom: 36px;
+}
+
+.hero-badge-dot {
+width: 6px; height: 6px;
+border-radius: 50%;
+background: var(–pink);
+animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+0%, 100% { opacity: 1; transform: scale(1); }
+50% { opacity: 0.5; transform: scale(0.7); }
+}
+
+.hero-title {
+font-family: ‘Fraunces’, serif;
+font-size: clamp(48px, 7vw, 88px);
+font-weight: 900;
+line-height: 0.95;
+color: white;
+margin-bottom: 8px;
+}
+
+.hero-title-italic {
+font-style: italic;
+color: var(–pink);
+}
+
+.hero-title-line2 {
+color: rgba(255,255,255,0.45);
+font-style: italic;
+font-size: clamp(36px, 5vw, 64px);
+}
+
+.hero-desc {
+font-size: 17px;
+color: rgba(255,255,255,0.55);
+line-height: 1.75;
+max-width: 520px;
+margin: 28px 0 48px;
+}
+
+.hero-network-bar {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 2px;
+background: rgba(255,255,255,0.06);
+border: 1px solid rgba(255,255,255,0.1);
+border-radius: 16px;
+overflow: hidden;
+max-width: 700px;
+}
+
+.network-stat {
+padding: 24px 20px;
+text-align: center;
+background: rgba(255,255,255,0.03);
+}
+
+.network-number {
+font-family: ‘Fraunces’, serif;
+font-size: 28px;
+font-weight: 900;
+color: var(–pink);
+line-height: 1;
+margin-bottom: 6px;
+}
+
+.network-label {
+font-size: 10px;
+font-weight: 600;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+color: rgba(255,255,255,0.35);
+}
+
+.hero-note {
+font-size: 11px;
+color: rgba(255,255,255,0.2);
+margin-top: 14px;
+letter-spacing: 0.05em;
+}
+
+/* ── SHARED LAYOUT ── */
+.page-wrap {
+max-width: 1100px;
+margin: 0 auto;
+padding: 0 48px;
+}
+
+@media (max-width: 700px) {
+.page-wrap { padding: 0 24px; }
+.hero { padding: 60px 24px 70px; }
+.hero-network-bar { grid-template-columns: repeat(2,1fr); }
+}
+
+/* ── SECTION HEADERS ── */
+.section-intro {
+padding: 72px 48px 0;
+max-width: 1100px;
+margin: 0 auto;
+}
+
+.eyebrow {
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+color: var(–mid);
+margin-bottom: 10px;
+}
+
+.section-heading {
+font-family: ‘Fraunces’, serif;
+font-size: clamp(32px, 4vw, 48px);
+font-weight: 900;
+line-height: 1.1;
+color: var(–ink);
+}
+
+/* ── WHO WE ARE ── */
+.who-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+padding: 40px 48px 0;
+max-width: 1100px;
+margin: 0 auto;
+}
+
+@media (max-width: 700px) { .who-grid { grid-template-columns: 1fr; padding: 32px 24px 0; } }
+
+.who-card {
+border-radius: 20px;
+padding: 36px;
+position: relative;
+overflow: hidden;
+}
+
+.who-card-jaime {
+background: linear-gradient(135deg, #1B3A6B 0%, #0e2347 100%);
+color: white;
+}
+
+.who-card-callie {
+background: linear-gradient(135deg, #FF2D78 0%, #c4155c 100%);
+color: white;
+}
+
+.who-verified {
+display: inline-flex;
+align-items: center;
+gap: 6px;
+font-size: 11px;
+font-weight: 600;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+opacity: 0.7;
+margin-bottom: 16px;
+}
+
+.who-name {
+font-family: ‘Fraunces’, serif;
+font-size: 30px;
+font-weight: 900;
+margin-bottom: 6px;
+}
+
+.who-role {
+font-size: 13px;
+opacity: 0.7;
+margin-bottom: 20px;
+}
+
+.who-bio {
+font-size: 14px;
+line-height: 1.75;
+opacity: 0.85;
+margin-bottom: 24px;
+}
+
+.who-handles {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+}
+
+.handle-tag {
+font-size: 11px;
+font-weight: 600;
+padding: 5px 12px;
+border-radius: 100px;
+background: rgba(255,255,255,0.18);
+color: white;
+}
+
+/* ── BRAND BLOCKS ── */
+.brand-block {
+padding: 72px 48px;
+max-width: 1100px;
+margin: 0 auto;
+}
+
+@media (max-width: 700px) { .brand-block { padding: 56px 24px; } }
+
+.brand-block + .brand-block {
+border-top: 1px solid rgba(0,0,0,0.07);
+}
+
+.brand-top {
+display: flex;
+align-items: flex-start;
+gap: 0;
+margin-bottom: 36px;
+}
+
+.brand-color-bar {
+width: 5px;
+height: 64px;
+border-radius: 3px;
+margin-right: 20px;
+flex-shrink: 0;
+margin-top: 4px;
+}
+
+.brand-name {
+font-family: ‘Fraunces’, serif;
+font-size: clamp(28px, 3.5vw, 42px);
+font-weight: 900;
+line-height: 1.05;
+margin-bottom: 8px;
+}
+
+.brand-desc {
+font-size: 14px;
+color: var(–mid);
+line-height: 1.65;
+max-width: 540px;
+}
+
+/* ── STATS STRIP ── */
+.stats-strip {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+gap: 12px;
+margin-bottom: 32px;
+}
+
+.stat-card {
+background: white;
+border: 1.5px solid rgba(0,0,0,0.07);
+border-radius: 14px;
+padding: 20px 16px;
+text-align: center;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+transform: translateY(-3px);
+box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.stat-val {
+font-family: ‘Fraunces’, serif;
+font-size: 26px;
+font-weight: 900;
+line-height: 1;
+margin-bottom: 5px;
+}
+
+.stat-lbl {
+font-size: 10px;
+font-weight: 600;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(–mid);
+}
+
+.stat-eng {
+font-size: 10px;
+font-weight: 700;
+padding: 2px 8px;
+border-radius: 100px;
+margin-top: 4px;
+display: inline-block;
+}
+
+/* ── PLATFORM BADGE ── */
+.platform-row {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+gap: 8px;
+margin-bottom: 24px;
+}
+
+.platform-badge {
+display: inline-flex;
+align-items: center;
+gap: 5px;
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+padding: 5px 12px;
+border-radius: 100px;
+border: 1.5px solid;
+}
+
+/* ── CONTENT TYPES ── */
+.content-row {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+gap: 12px;
+margin-bottom: 28px;
+}
+
+.content-chip {
+background: white;
+border: 1.5px solid rgba(0,0,0,0.07);
+border-radius: 14px;
+padding: 20px 18px;
+transition: all 0.2s ease;
+}
+
+.content-chip:hover {
+transform: translateY(-2px);
+box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+}
+
+.chip-icon { font-size: 22px; margin-bottom: 10px; }
+
+.chip-name {
+font-size: 13px;
+font-weight: 700;
+margin-bottom: 5px;
+}
+
+.chip-desc {
+font-size: 11px;
+color: var(–mid);
+line-height: 1.6;
+}
+
+/* ── AUDIENCE TAGS ── */
+.audience-row {
+background: white;
+border: 1.5px solid rgba(0,0,0,0.07);
+border-radius: 14px;
+padding: 22px 24px;
+}
+
+.aud-label {
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–mid);
+margin-bottom: 14px;
+}
+
+.aud-tags {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+}
+
+.aud-tag {
+font-size: 12px;
+font-weight: 500;
+padding: 6px 14px;
+border-radius: 8px;
+background: var(–offwhite);
+border: 1px solid rgba(0,0,0,0.08);
+color: var(–ink);
+}
+
+/* ── TIKTOK SUB-SECTION ── */
+.tiktok-sub {
+background: #f0f0f8;
+border-radius: 14px;
+padding: 20px 24px;
+margin-top: 12px;
+display: flex;
+align-items: center;
+gap: 20px;
+flex-wrap: wrap;
+}
+
+.tiktok-label {
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: #333;
+margin-bottom: 10px;
+}
+
+.tiktok-stats {
+display: flex;
+gap: 24px;
+flex-wrap: wrap;
+}
+
+.tiktok-stat-val {
+font-family: ‘Fraunces’, serif;
+font-size: 22px;
+font-weight: 900;
+line-height: 1;
+}
+
+.tiktok-stat-lbl {
+font-size: 10px;
+color: var(–mid);
+font-weight: 600;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+margin-top: 3px;
+}
+
+/* ── NETWORK TOTALS BANNER ── */
+.network-banner {
+background: var(–ink);
+padding: 64px 48px;
+margin: 0;
+}
+
+.network-banner-inner {
+max-width: 1100px;
+margin: 0 auto;
+}
+
+.network-banner-title {
+font-family: ‘Fraunces’, serif;
+font-size: clamp(28px, 3.5vw, 40px);
+font-weight: 900;
+color: white;
+margin-bottom: 36px;
+}
+
+.network-banner-title span { color: var(–pink); font-style: italic; }
+
+.network-totals {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 16px;
+}
+
+@media (max-width: 700px) { .network-totals { grid-template-columns: repeat(2,1fr); } }
+
+.net-total-card {
+background: rgba(255,255,255,0.05);
+border: 1px solid rgba(255,255,255,0.10);
+border-radius: 16px;
+padding: 28px 20px;
+text-align: center;
+}
+
+.net-total-num {
+font-family: ‘Fraunces’, serif;
+font-size: 36px;
+font-weight: 900;
+color: var(–pink);
+line-height: 1;
+margin-bottom: 8px;
+}
+
+.net-total-lbl {
+font-size: 10px;
+font-weight: 600;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+color: rgba(255,255,255,0.35);
+}
+
+.net-total-sub {
+font-size: 11px;
+color: rgba(255,255,255,0.2);
+margin-top: 4px;
+}
+
+/* ── WHAT WE OFFER ── */
+.offer-section {
+padding: 72px 48px;
+max-width: 1100px;
+margin: 0 auto;
+}
+
+@media (max-width: 700px) { .offer-section { padding: 56px 24px; } }
+
+.offer-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+gap: 16px;
+margin-top: 36px;
+}
+
+.offer-card {
+background: white;
+border: 1.5px solid rgba(0,0,0,0.07);
+border-radius: 18px;
+padding: 28px 24px;
+position: relative;
+overflow: hidden;
+transition: all 0.25s ease;
+}
+
+.offer-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+.offer-card-top {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+margin-bottom: 14px;
+}
+
+.offer-icon { font-size: 26px; }
+
+.offer-num {
+font-family: ‘Fraunces’, serif;
+font-size: 13px;
+font-weight: 700;
+color: rgba(0,0,0,0.12);
+}
+
+.offer-title {
+font-size: 16px;
+font-weight: 700;
+margin-bottom: 8px;
+}
+
+.offer-desc {
+font-size: 12px;
+color: var(–mid);
+line-height: 1.7;
+}
+
+/* ── CTA ── */
+.cta-strip {
+background: linear-gradient(135deg, var(–pink) 0%, #c4155c 100%);
+padding: 72px 48px;
+}
+
+@media (max-width: 700px) { .cta-strip { padding: 56px 24px; } }
+
+.cta-inner {
+max-width: 1100px;
+margin: 0 auto;
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 40px;
+}
+
+.cta-left h2 {
+font-family: ‘Fraunces’, serif;
+font-size: clamp(32px, 4vw, 52px);
+font-weight: 900;
+color: white;
+line-height: 1.05;
+margin-bottom: 12px;
+}
+
+.cta-left p {
+font-size: 15px;
+color: rgba(255,255,255,0.75);
+line-height: 1.7;
+max-width: 380px;
+}
+
+.cta-right {
+display: flex;
+flex-direction: column;
+gap: 12px;
+min-width: 280px;
+}
+
+.cta-card {
+background: rgba(255,255,255,0.15);
+border: 1px solid rgba(255,255,255,0.25);
+border-radius: 14px;
+padding: 18px 22px;
+backdrop-filter: blur(10px);
+transition: background 0.2s ease;
+}
+
+.cta-card:hover { background: rgba(255,255,255,0.22); }
+
+.cta-card-name {
+font-size: 14px;
+font-weight: 700;
+color: white;
+margin-bottom: 3px;
+}
+
+.cta-card-role {
+font-size: 10px;
+font-weight: 600;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: rgba(255,255,255,0.55);
+margin-bottom: 8px;
+}
+
+.cta-card-email {
+font-size: 13px;
+color: rgba(255,255,255,0.9);
+font-weight: 500;
+}
+
+/* ── FOOTER ── */
+footer {
+background: var(–ink);
+padding: 32px 48px;
+text-align: center;
+font-size: 11px;
+color: rgba(255,255,255,0.2);
+letter-spacing: 0.06em;
+line-height: 1.8;
+}
+
+/* ── COLOR HELPERS ── */
+.c-pink { color: var(–pink); }
+.c-blue { color: var(–blue); }
+.c-red { color: var(–red); }
+.c-green { color: var(–green); }
+.c-navy { color: var(–navy); }
+.c-purple { color: var(–purple); }
+.c-gold { color: var(–gold); }
+.bg-pink { background: rgba(255,45,120,0.08); border-color: rgba(255,45,120,0.2) !important; }
+.bg-blue { background: rgba(37,99,235,0.06); border-color: rgba(37,99,235,0.18) !important; }
+.bg-red { background: rgba(252,85,77,0.07); border-color: rgba(252,85,77,0.2) !important; }
+.bg-gold { background: rgba(201,149,76,0.08); border-color: rgba(201,149,76,0.2) !important; }
+
+.eng-pink { background: rgba(255,45,120,0.12); color: var(–pink); }
+.eng-blue { background: rgba(37,99,235,0.10); color: var(–blue); }
+.eng-red { background: rgba(252,85,77,0.10); color: var(–red); }
+.eng-gold { background: rgba(201,149,76,0.12); color: var(–gold); }
+</style>
+
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+
+<div class="hero">
+  <div class="hero-blobs">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      UGC + Creator Media Portfolio · March–April 2026
+    </div>
+    <h1 class="hero-title">
+      <span class="hero-title-italic">Callie Greenberg</span><br>
+      <span style="color:white;">+ Jaime Silva, RN</span>
+    </h1>
+    <p class="hero-desc">Clinician-backed content creators building trusted, high-engagement communities across women's health, chronic illness advocacy, and body literacy — all platforms, real reach.</p>
+
+```
+<div class="hero-network-bar">
+  <div class="network-stat">
+    <div class="network-number">21,394</div>
+    <div class="network-label">Total Followers</div>
+  </div>
+  <div class="network-stat">
+    <div class="network-number">859.3K</div>
+    <div class="network-label">Total Views</div>
+  </div>
+  <div class="network-stat">
+    <div class="network-number">69,891</div>
+    <div class="network-label">Total Interactions</div>
+  </div>
+  <div class="network-stat">
+    <div class="network-number">+4,142</div>
+    <div class="network-label">New Followers</div>
+  </div>
+</div>
+<p class="hero-note">All data: Mar 5 – Apr 3, 2026 · All Platforms</p>
+```
+
+  </div>
+</div>
+
+<!-- ══ WHO WE ARE ══ -->
+
+<div class="section-intro" style="padding-bottom: 32px;">
+  <div class="eyebrow">The Creators</div>
+  <div class="section-heading">Two voices.<br>One mission.</div>
+</div>
+
+<div class="who-grid">
+  <div class="who-card who-card-callie">
+    <div class="who-verified">✦ @calliemaegreenberg · Instagram Verified</div>
+    <div class="who-name">Callie Greenberg</div>
+    <div class="who-role">Co-Founder · Co-Host · Endo Advocate</div>
+    <div class="who-bio">Callie anchors the community voice of the Endo Warriors ecosystem — empathetic, candid, and deeply connected to an audience navigating endometriosis and reproductive health. Co-founder of The Girls Room Project and co-host of Endo Warriors Podcast.</div>
+    <div class="who-handles">
+      <span class="handle-tag">@calliemaegreenberg</span>
+      <span class="handle-tag">@endowarriorspodcast</span>
+      <span class="handle-tag">@tgrofficialhq</span>
+    </div>
+  </div>
+  <div class="who-card who-card-jaime">
+    <div class="who-verified">✦ @jaimesilvarn · Meta Verified ✔</div>
+    <div class="who-name">Jaime Silva, RN, BSN</div>
+    <div class="who-role">Registered Nurse · Endo Patient · Co-Founder</div>
+    <div class="who-bio">Jaime brings clinical credibility and 20+ years of lived endo experience to every post. Co-founder of IMTELEDOCTOR and The Girls Room Project, co-host of Endo Warriors Podcast, and Strategic Advisor to EEFA.</div>
+    <div class="who-handles">
+      <span class="handle-tag">@jaimesilvarn</span>
+      <span class="handle-tag">@imteledoctor</span>
+      <span class="handle-tag">@endowarriorspodcast</span>
+      <span class="handle-tag">@tgrofficialhq</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     BRAND 1: ENDO WARRIORS PODCAST
+══════════════════════════════════ -->
+
+<div class="brand-block">
+  <div class="brand-top">
+    <div class="brand-color-bar" style="background: linear-gradient(to bottom, var(--red), var(--blush));"></div>
+    <div>
+      <div class="brand-name c-red">Endo Warriors Podcast</div>
+      <div class="brand-desc">The leading audio + social destination for the endometriosis community. 200 million people worldwide live with endo — this is their space.</div>
+    </div>
+  </div>
+
+  <div class="platform-row">
+    <span class="platform-badge" style="color: var(--red); border-color: rgba(252,85,77,0.3); background: rgba(252,85,77,0.06);">📷 Instagram · @endowarriorspodcast</span>
+    <span style="font-size:12px; font-weight:700; color: var(--red);">4.64% engagement</span>
+  </div>
+
+  <div class="stats-strip">
+    <div class="stat-card bg-red">
+      <div class="stat-val c-red">4,205</div>
+      <div class="stat-lbl">Followers</div>
+    </div>
+    <div class="stat-card bg-red">
+      <div class="stat-val c-red">315.1K</div>
+      <div class="stat-lbl">Views (30 days)</div>
+    </div>
+    <div class="stat-card bg-red">
+      <div class="stat-val c-red">14,600</div>
+      <div class="stat-lbl">Interactions</div>
+    </div>
+    <div class="stat-card bg-red">
+      <div class="stat-val c-red">+1,900</div>
+      <div class="stat-lbl">New Followers</div>
+    </div>
+    <div class="stat-card bg-red">
+      <div class="stat-val c-red">4.64%</div>
+      <div class="stat-lbl">Engagement Rate</div>
+      <div class="stat-eng eng-red">Above industry avg</div>
+    </div>
+  </div>
+
+  <!-- TikTok sub-section -->
+
+  <div class="tiktok-sub">
+    <div>
+      <div class="tiktok-label">🎵 TikTok · @endowarriorspodcast · <strong style="color: #2563EB;">39.3% engagement</strong></div>
+      <div class="tiktok-stats">
+        <div>
+          <div class="tiktok-stat-val" style="color: #2563EB;">9,589</div>
+          <div class="tiktok-stat-lbl">Followers</div>
+        </div>
+        <div>
+          <div class="tiktok-stat-val" style="color: #2563EB;">85.0K</div>
+          <div class="tiktok-stat-lbl">Views</div>
+        </div>
+        <div>
+          <div class="tiktok-stat-val" style="color: #2563EB;">33,366</div>
+          <div class="tiktok-stat-lbl">Interactions</div>
+        </div>
+        <div>
+          <div class="tiktok-stat-val" style="color: #2563EB;">+392</div>
+          <div class="tiktok-stat-lbl">New Followers</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height: 28px;"></div>
+
+  <div class="content-row">
+    <div class="content-chip">
+      <div class="chip-icon">🎙️</div>
+      <div class="chip-name">Podcast Episodes</div>
+      <div class="chip-desc">Host-read integrations, mid-roll ads, and sponsored segments — our most intimate ad format.</div>
+    </div>
+    <div class="content-chip">
+      <div class="chip-icon">🎬</div>
+      <div class="chip-name">Reels + TikTok</div>
+      <div class="chip-desc">High-retention short video across IG and TikTok — 39.3% TikTok engagement speaks for itself.</div>
+    </div>
+    <div class="content-chip">
+      <div class="chip-icon">📸</div>
+      <div class="chip-name">Static Feed Posts</div>
+      <div class="chip-desc">Medically reviewed education graphics, awareness posts, and product spotlights.</div>
+    </div>
+    <div class="content-chip">
+      <div class="chip-icon">🗂️</div>
+      <div class="chip-name">Stories + Carousels</div>
+      <div class="chip-desc">Q&A storytelling, swipe-through education, and link-in-bio drives to your brand.</div>
+    </div>
+  </div>
+
+  <div class="audience-row">
+    <div class="aud-label">Audience Profile</div>
+    <div class="aud-tags">
+      <span class="aud-tag">Women 18–44</span>
+      <span class="aud-tag">Endometriosis patients</span>
+      <span class="aud-tag">Chronic illness community</span>
+      <span class="aud-tag">Reproductive health seekers</span>
+      <span class="aud-tag">Post-surgical recovery</span>
+      <span class="aud-tag">200M worldwide with endo</span>
+      <span class="aud-tag">Highly engaged, high trust</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════
+     BRAND 2: IMTELEDOCTOR
+══════════════════════ -->
+
+<div class="brand-block">
+  <div class="brand-top">
+    <div class="brand-color-bar" style="background: linear-gradient(to bottom, var(--navy), var(--blue));"></div>
+    <div>
+      <div class="brand-name c-navy">IMTELEDOCTOR</div>
+      <div class="brand-desc">Physician-led concierge telemedicine. Licensed in 20+ U.S. states. All content medically reviewed by Dr. Carlos H. Silva, MD, FCCP, CMO.</div>
+    </div>
+  </div>
+
+  <div class="platform-row">
+    <span class="platform-badge" style="color: var(--navy); border-color: rgba(27,58,107,0.3); background: rgba(27,58,107,0.06);">📷 Instagram · @imteledoctor</span>
+    <span style="font-size:12px; font-weight:700; color: var(--navy);">7.73% engagement</span>
+  </div>
+
+  <div class="stats-strip">
+    <div class="stat-card bg-blue">
+      <div class="stat-val c-navy">4,961</div>
+      <div class="stat-lbl">Followers</div>
+    </div>
+    <div class="stat-card bg-blue">
+      <div class="stat-val c-navy">82.8K</div>
+      <div class="stat-lbl">Views (30 days)</div>
+    </div>
+    <div class="stat-card bg-blue">
+      <div class="stat-val c-navy">6,400</div>
+      <div class="stat-lbl">Interactions</div>
+    </div>
+    <div class="stat-card bg-blue">
+      <div class="stat-val c-navy">+1,100</div>
+      <div class="stat-lbl">New Followers</div>
+    </div>
+    <div class="stat-card bg-blue">
+      <div class="stat-val c-navy">7.73%</div>
+      <div class="stat-lbl">Engagement Rate</div>
+      <div class="stat-eng eng-blue">Well above avg</div>
+    </div>
+  </div>
+
+  <div class="content-row">
+    <div class="content-chip">
+      <div class="chip-icon">🎬</div>
+      <div class="chip-name">Clinical Reels</div>
+      <div class="chip-desc">Physician-approved short-form video — GLP-1, inflammation, chronic disease, telehealth access.</div>
+    </div>
+    <div class="content-chip">
+      <div class="chip-icon">📋</div>
+      <div class="chip-name">Patient Education Posts</div>
+      <div class="chip-desc">Trust-building static graphics breaking down clinical topics in accessible language.</div>
+    </div>
+    <div class="content-chip">
+      <div class="chip-icon">📖</div>
+      <div class="chip-name">Blog / SEO Content</div>
+      <div class="chip-desc">Medically reviewed long-form articles driving organic search. Branded content available.</div>
+    </div>
+    <div class="content-chip">
+      <div class="chip-icon">💬</div>
+      <div class="chip-name">Stories + Q&A</div>
+      <div class="chip-desc">Interactive patient Q&A, myth-busting carousels, and telehealth education.</div>
+    </div>
+  </div>
+
+  <div class="audience-row">
+    <div class="aud-label">Audience Profile</div>
+    <div class="aud-tags">
+      <span class="aud-tag">Adults 25–55</span>
+      <span class="aud-tag">Chronic condition patients</span>
+      <span class="aud-tag">GLP-1 + weight management seekers</span>
+      <span class="aud-tag">Telehealth adopters</span>
+      <span class="aud-tag">Health-conscious consumers</span>
+      <span class="aud-tag">Insurance-navigating patients</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+     BRAND 3: THE GIRLS ROOM PROJECT
+══════════════════════════════ -->
+
+<div class="brand-block">
+  <div class="brand-top">
+    <div class="brand-color-bar" style="background: linear-gradient(to bottom, var(--pink), var(--purple));"></div>
+    <div>
+      <div class="brand-name c-pink">The Girls Room Project</div>
+      <div class="brand-desc">Bold, joyful body literacy and period education for girls ages 8–18 — and the parents raising them. No fear-based framing. Ever.</div>
+    </div>
+  </div>
+
+  <div class="platform-row">
+    <span class="platform-badge" style="color: var(--pink); border-color: rgba(255,45,120,0.3); background: rgba(255,45,120,0.06);">📷 Instagram · @tgrofficialhq</span>
+    <span style="font-size:12px; font-weight:700; color: var(--pink);">3.11% engagement</span>
+  </div>
+
+  <div class="stats-strip">
+    <div class="stat-card bg-pink">
+      <div class="stat-val c-pink">652</div>
+      <div class="stat-lbl">Followers</div>
+    </div>
+    <div class="stat-card bg-pink">
+      <div class="stat-val c-pink">96.3K</div>
+      <div class="stat-lbl">Views (30 days)</div>
+    </div>
+    <div class="stat-card bg-pink">
+      <div class="stat-val c-pink">3,000</div>
+      <div class="stat-lbl">Interactions</div>
+    </div>
+    <div class="stat-card bg-pink">
+      <div class="stat-val c-pink">+271</div>
+      <div class="stat-lbl">New Followers</div>
+    </div>
+    <div class="stat-card bg-pink">
+      <div class="stat-val c-pink">3.11%</div>
+      <div class="stat-lbl">Engagement Rate</div>
+      <div class="stat-eng eng-pink">Account launched 2026</div>
+    </div>
+  </div>
+
+  <div class="content-row">
+    <div class="content-chip">
+      <div class="chip-icon">🎬</div>
+      <div class="chip-name">Educational Reels</div>
+      <div class="chip-desc">Fun, age-appropriate short videos on cycle education, period basics, body confidence.</div>
+    </div>
+    <div class="content-chip">
+      <div class="chip-icon">🎨</div>
+      <div class="chip-name">Bold Static Posts</div>
+      <div class="chip-desc">Vibrant Gen Z-facing graphics. Hot pink, green, and purple — highly shareable.</div>
+    </div>
+    <div class="content-chip">
+      <div class="chip-icon">📱</div>
+      <div class="chip-name">Stories + Carousels</div>
+      <div class="chip-desc">Swipe-through guides for girls and parents — period products, cycle tracking, confidence.</div>
+    </div>
+    <div class="content-chip">
+      <div class="chip-icon">🎓</div>
+      <div class="chip-name">Membership Content</div>
+      <div class="chip-desc">Four paid membership tiers. Sponsored lesson integrations available for aligned brands.</div>
+    </div>
+  </div>
+
+  <div class="audience-row">
+    <div class="aud-label">Audience Profile</div>
+    <div class="aud-tags">
+      <span class="aud-tag">Girls ages 8–18</span>
+      <span class="aud-tag">Parents (primary purchasers)</span>
+      <span class="aud-tag">Mothers of tweens + teens</span>
+      <span class="aud-tag">Period product buyers</span>
+      <span class="aud-tag">Body literacy advocates</span>
+      <span class="aud-tag">Health-forward families</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════
+     BRAND 4: PERSONAL ACCOUNTS
+══════════════════════════ -->
+
+<div class="brand-block">
+  <div class="brand-top">
+    <div class="brand-color-bar" style="background: linear-gradient(to bottom, var(--gold), #e8c07a);"></div>
+    <div>
+      <div class="brand-name c-gold">Jaime + Callie Personal</div>
+      <div class="brand-desc">Authentic personal brand content — the most trusted UGC format because it's genuinely lived. Real nurses. Real patients. Real results.</div>
+    </div>
+  </div>
+
+  <!-- Jaime personal -->
+
+  <div class="platform-row">
+    <span class="platform-badge" style="color: var(--gold); border-color: rgba(201,149,76,0.3); background: rgba(201,149,76,0.06);">📷 Instagram · @jaimesilvarn · Meta Verified ✔</span>
+    <span style="font-size:12px; font-weight:700; color: var(--gold);">4.50% engagement</span>
+  </div>
+
+  <div class="stats-strip" style="margin-bottom: 16px;">
+    <div class="stat-card bg-gold">
+      <div class="stat-val c-gold">1,317</div>
+      <div class="stat-lbl">Followers</div>
+    </div>
+    <div class="stat-card bg-gold">
+      <div class="stat-val c-gold">262K</div>
+      <div class="stat-lbl">Views (30 days)</div>
+    </div>
+    <div class="stat-card bg-gold">
+      <div class="stat-val c-gold">11,800</div>
+      <div class="stat-lbl">Interactions</div>
+    </div>
+    <div class="stat-card bg-gold">
+      <div class="stat-val c-gold">+419</div>
+      <div class="stat-lbl">New Followers</div>
+    </div>
+    <div class="stat-card bg-gold">
+      <div class="stat-val c-gold">4.50%</div>
+      <div class="stat-lbl">Engagement Rate</div>
+      <div class="stat-eng eng-gold">Above industry avg</div>
+    </div>
+  </div>
+
+  <!-- Callie personal -->
+
+  <div class="platform-row" style="margin-top: 8px;">
+    <span class="platform-badge" style="color: var(--pink); border-color: rgba(255,45,120,0.3); background: rgba(255,45,120,0.06);">📷 Instagram · @calliemaegreenberg</span>
+    <span style="font-size:12px; font-weight:700; color: var(--pink);">4.00% engagement</span>
+  </div>
+
+  <div class="stats-strip">
+    <div class="stat-card bg-pink">
+      <div class="stat-val c-pink">670</div>
+      <div class="stat-lbl">Followers</div>
+    </div>
+    <div class="stat-card bg-pink">
+      <div class="stat-val c-pink">18.1K</div>
+      <div class="stat-lbl">Views (30 days)</div>
+    </div>
+    <div class="stat-card bg-pink">
+      <div class="stat-val c-pink">725</div>
+      <div class="stat-lbl">Interactions</div>
+    </div>
+    <div class="stat-card bg-pink">
+      <div class="stat-val c-pink">+60</div>
+      <div class="stat-lbl">New Followers</div>
+    </div>
+    <div class="stat-card bg-pink">
+      <div class="stat-val c-pink">4.00%</div>
+      <div class="stat-lbl">Engagement Rate</div>
+    </div>
+  </div>
+
+  <div class="content-row">
+    <div class="content-chip">
+      <div class="chip-icon">🎬</div>
+      <div class="chip-name">Personal Reels</div>
+      <div class="chip-desc">Raw, relatable short-form video from a nurse and an advocate. Highest-trust UGC format.</div>
+    </div>
+    <div class="content-chip">
+      <div class="chip-icon">📸</div>
+      <div class="chip-name">Product Integration</div>
+      <div class="chip-desc">Lifestyle and clinical product reviews embedded in authentic daily life — not scripted, not staged.</div>
+    </div>
+    <div class="content-chip">
+      <div class="chip-icon">📖</div>
+      <div class="chip-name">Storytelling Carousels</div>
+      <div class="chip-desc">Long-form personal health journey content, advocacy wins, and brand experiences.</div>
+    </div>
+    <div class="content-chip">
+      <div class="chip-icon">💬</div>
+      <div class="chip-name">Stories + Testimonials</div>
+      <div class="chip-desc">Unfiltered day-in-the-life Stories. Great for product drops and partnership announcements.</div>
+    </div>
+  </div>
+
+  <div class="audience-row">
+    <div class="aud-label">Audience Profile</div>
+    <div class="aud-tags">
+      <span class="aud-tag">Women 25–45</span>
+      <span class="aud-tag">Endo + chronic illness patients</span>
+      <span class="aud-tag">Healthcare professionals</span>
+      <span class="aud-tag">Wellness-focused consumers</span>
+      <span class="aud-tag">Highly loyal, high-intent</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ COMBINED NETWORK TOTALS ══ -->
+
+<div class="network-banner">
+  <div class="network-banner-inner">
+    <div class="network-banner-title">Our full network,<br><span>all platforms combined.</span></div>
+    <div class="network-totals">
+      <div class="net-total-card">
+        <div class="net-total-num">21,394</div>
+        <div class="net-total-lbl">Total Followers</div>
+        <div class="net-total-sub">All accounts, all platforms</div>
+      </div>
+      <div class="net-total-card">
+        <div class="net-total-num">859.3K</div>
+        <div class="net-total-lbl">Total Views</div>
+        <div class="net-total-sub">Mar 5 – Apr 3, 2026</div>
+      </div>
+      <div class="net-total-card">
+        <div class="net-total-num">69,891</div>
+        <div class="net-total-lbl">Total Interactions</div>
+        <div class="net-total-sub">Likes, comments, shares</div>
+      </div>
+      <div class="net-total-card">
+        <div class="net-total-num">+4,142</div>
+        <div class="net-total-lbl">New Followers</div>
+        <div class="net-total-sub">30-day growth, all accounts</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ WHAT WE OFFER ══ -->
+
+<div class="offer-section">
+  <div class="eyebrow">Partnership Formats</div>
+  <div class="section-heading">What we create<br>for brand partners.</div>
+  <div class="offer-grid">
+    <div class="offer-card">
+      <div class="offer-card-top"><div class="offer-icon">🎙️</div><div class="offer-num">01</div></div>
+      <div class="offer-title">Podcast Sponsorship</div>
+      <div class="offer-desc">Host-read integrations, episode segments, pre/mid/post-roll ads on Endo Warriors Podcast. The most intimate ad format — our listeners trust our voices.</div>
+    </div>
+    <div class="offer-card">
+      <div class="offer-card-top"><div class="offer-icon">🎬</div><div class="offer-num">02</div></div>
+      <div class="offer-title">Reels + TikTok</div>
+      <div class="offer-desc">Short-form video created around your product with clinical credibility and personal relatability. TikTok engagement rate of 39.3% on Endo Warriors account.</div>
+    </div>
+    <div class="offer-card">
+      <div class="offer-card-top"><div class="offer-icon">📦</div><div class="offer-num">03</div></div>
+      <div class="offer-title">Multi-Platform Package</div>
+      <div class="offer-desc">Cross-brand activations spanning multiple accounts and formats — ideal for launches needing broad, trusted reach across our full 21K+ network.</div>
+    </div>
+    <div class="offer-card">
+      <div class="offer-card-top"><div class="offer-icon">🤝</div><div class="offer-num">04</div></div>
+      <div class="offer-title">Brand Ambassador</div>
+      <div class="offer-desc">Ongoing monthly partnership with consistent brand presence across Stories, feed, podcast, and community content.</div>
+    </div>
+    <div class="offer-card">
+      <div class="offer-card-top"><div class="offer-icon">✍️</div><div class="offer-num">05</div></div>
+      <div class="offer-title">Blog + Written Content</div>
+      <div class="offer-desc">Medically reviewed SEO articles and patient education content on IMTELEDOCTOR, TGR, or EEFA platforms.</div>
+    </div>
+    <div class="offer-card">
+      <div class="offer-card-top"><div class="offer-icon">🎁</div><div class="offer-num">06</div></div>
+      <div class="offer-title">Gifted + Affiliate</div>
+      <div class="offer-desc">Product gifting with organic integration and affiliate promotion — ideal for period care, wellness, supplements, and femtech brands.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CTA ══ -->
+
+<div class="cta-strip">
+  <div class="cta-inner">
+    <div class="cta-left">
+      <h2>Ready to reach<br>the right people?</h2>
+      <p>We partner with brands aligned with women's health, reproductive wellness, chronic illness, body literacy, and clinical care. Our audiences trust us — and that trust transfers.</p>
+    </div>
+    <div class="cta-right">
+      <div class="cta-card">
+        <div class="cta-card-name">Callie Greenberg</div>
+        <div class="cta-card-role">Creator · Partnerships</div>
+        <div class="cta-card-email">ownmyendo@gmail.com</div>
+      </div>
+      <div class="cta-card">
+        <div class="cta-card-name">Jaime Silva, RN, BSN</div>
+        <div class="cta-card-role">Creator · Partnerships</div>
+        <div class="cta-card-email">Jaime.Silva.rn@gmail.com</div>
+      </div>
+      <div class="cta-card">
+        <div class="cta-card-name">Instagram</div>
+        <div class="cta-card-role">DM any account</div>
+        <div class="cta-card-email" style="line-height: 2;">@endowarriorspodcast<br>@jaimesilvarn<br>@calliemaegreenberg<br>@imteledoctor<br>@tgrofficialhq</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  endowarriorspodcast.com · calliemaegreenberg.com · imteledoctor.com · thegirlsroomofficial.com
+  <br>© 2026 Callie Greenberg &amp; Jaime Silva, RN, BSN · Endo Warriors Podcast · IMTELEDOCTOR · The Girls Room Project · EEFA
+  <br>All content medically reviewed by Dr. Carlos H. Silva, MD, FCCP, CMO, Internal Medicine.
+</footer>
+
+</body>
+</html>
